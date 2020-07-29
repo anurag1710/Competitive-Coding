@@ -1,9 +1,3 @@
-
-// ye vlaa karna baaki hai abhi
-
-
-
-
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
