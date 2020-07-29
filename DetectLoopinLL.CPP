@@ -20,6 +20,16 @@ struct Node
     }
 };
 
+void looping(Node* head,Node* tail,int pos)
+{
+    if(pos==0)
+        return;
+    Node* temp=head;
+    for(int i=1;i<pos;i++)
+        temp=temp->next;
+    tail->next=temp;
+}
+
 bool detectloop(Node* head)
 {
     if(head==NULL || head->next==NULL)
@@ -58,9 +68,10 @@ int main()
                 tail->next=new Node(data);
                 tail=tail->next;
         }
-
+        cin>>k;
+        looping(head,tail,k);
         if(detectloop(head))
-            cout<<"Loop Present\n";
+            cout<<"Loop is present\n";
         else
             cout<<"Loop isn't present\n";
     }
